@@ -15,9 +15,15 @@
     --accordion-body-font-family: 'Roboto', sans-serif;
     --accordion-body-font-size: 1rem;
 
+    --footer-font-family: 'Roboto', sans-serif;
+    --footer-font-size: 1.5rem;
+
+
     --body-bgc: #C6DA52;
     --accordion-button-c: black;
     --accordion-button-bgc: #36960a;
+    --wpp-c: #26b33e;
+    --wpp-dark-c: #1b7e2b;
 }
 * {
     box-sizing: border-box;
@@ -131,4 +137,39 @@ ul {
     display: flex;
     justify-content: space-between;
     margin-top: .5rem;
+}
+
+/*******
+*FOOTER*
+*******/
+.footer {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    font-family: var(--footer-font-family);
+    font-size: var(--footer-font-size);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-decoration: none;
+    background-color: var(--wpp-c);
+    color: black;
+    border: 2px solid var(--wpp-dark-c);
+    border-radius: 20px;
+    padding: 1rem 2rem;
+}
+.footer .wpp-logo {
+    background-image: url("./img/whatsapp.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
 }
