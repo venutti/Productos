@@ -158,8 +158,8 @@ ul {
     justify-content: center;
     gap: 1rem;
     text-decoration: none;
-    background-color: var(--wpp-c);
-    color: black;
+    background-color: var(--accordion-button-bgc);
+    color: white;
     border: 2px solid var(--wpp-dark-c);
     border-radius: 20px;
     padding: 1rem 2rem;
