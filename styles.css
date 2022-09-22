@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+
+:root {
+    --header-font-family: 'Kaushan Script', cursive;
+    --header-font-size: 1.6rem;
+    --header-font-weight: 400;
+
+    --accordion-button-font-family: 'Oswald', sans-serif;
+    --accordion-button-font-size: 2rem;
+    --accordion-button-font-weight: 400;
+
+    --accordion-body-font-family: 'Roboto', sans-serif;
+    --accordion-body-font-size: 1rem;
+
+    --body-bgc: #C6DA52;
+    --accordion-button-c: black;
+    --accordion-button-bgc: #36960a;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html,
+body {
+    height: 100%;
+}
+body {
+    background-color: var(--body-bgc);
+}
+ul {
+    list-style: none;
+}
+/*******
+*HEADER*
+*******/
+.header {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem 0;
+    line-height: 1;
+    /*font*/
+    font-family: var(--header-font-family);
+    font-size: var(--header-font-size);
+    font-weight: var(--header-font-weight);
+}
+.header h1 {
+    margin: 0 2rem;
+}
+/**********
+*ACCORDION*
+**********/
+.accordion {
+    max-width: 700px;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.accordion input {
+    display: none;
+}
+.accordion li {
+    border-radius: 10px;
+    box-shadow: 0 0 15px 0 rgba(0,0,0,.3);
+}
+/****************
+*ACORDION-BUTTON*
+****************/
+.accordion .accordion-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    /*color*/
+    color: var(--accordion-button-c);
+    background-color: var(--accordion-button-bgc);
+    /*spacing*/
+    padding: .5rem 1.5rem;
+}
+.accordion .accordion-label {
+    /*font*/
+    font-family: var(--accordion-button-font-family);
+    font-weight: var(--accordion-button-font-weight);
+    font-size: var(--accordion-button-font-size);
+}
+.accordion .accordion-icon {
+    width: 30px;
+    height: 30px;
+    background-image: url("./img/expand-more-icon.svg");
+    background-size: cover;
+    background-position: center;
+    transition: transform .4s ease-in-out;
+}
+.accordion input:checked + .accordion-button .accordion-icon {
+    transform: rotate(180deg);
+}
+/*********************
+*ACORDION DESCRIPTION*
+*********************/
+.accordion .accordion-description {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .4s ease-in-out;
+}
+.accordion input:checked + .accordion-button +  .accordion-description {
+    max-height: 500px;
+}
+.accordion .accordion-description-content {
+    /*spacing*/
+    padding: 1rem;
+    /*font*/
+    font-family: var(--accordion-body-font-family);
+    font-size: var(--accordion-body-font-size);
+    background-color: rgba(255,255,255,.4);
+}
+.accordion .accordion-description .img-product,
+.accordion .accordion-description .price-product {
+    width: min(300px, 50vw);
+    margin: 0 auto;
+}
+.accordion .accordion-description .img-product {
+    height: min(300px, 50vw);
+    background-color: grey;
+}
+.accordion .accordion-description .price-product {
+    display: flex;
+    justify-content: space-between;
+    margin-top: .5rem;
+}
