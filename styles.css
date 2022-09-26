@@ -40,6 +40,9 @@ body {
 ul {
     list-style: none;
 }
+.img-product {
+    display: block;
+}
 /*******
 *HEADER*
 *******/
@@ -110,7 +113,7 @@ ul {
 *********************/
 .accordion .accordion-description {
     max-height: 0;
-    overflow: hidden;
+    overflow: scroll;
     transition: max-height .4s ease-in-out;
 }
 .accordion input:checked + .accordion-button +  .accordion-description {
@@ -130,8 +133,11 @@ ul {
     margin: 0 auto;
 }
 .accordion .accordion-description .img-product {
-    height: min(300px, 50vw);
+    height: auto;
     background-color: grey;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .accordion .accordion-description .price-product {
     display: flex;
