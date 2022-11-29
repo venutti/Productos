@@ -133,6 +133,25 @@ body {
   display: flex;
   gap: var(--spacing-xs);
 }
+.info-product {
+  border: 3px solid var(--green-full-dark);
+  border-radius: 50%;
+  position: absolute;
+  z-index: 2;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+  background-color: black;
+  color: var(--white);
+  padding: var(--spacing-xs);
+  display: flex;
+  gap: var(--spacing-xs);
+}
+.info-product.info1 {
+  top: 0;
+}
+.info-product.info2 {
+  top: 60px;
+}
 /*******
 *FOOTER*
 *******/
