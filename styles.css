@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
 
 :root {
   --spacing-xs: 1rem;
@@ -11,11 +10,11 @@
   --spacing-xl: 3rem;
 
   --green-full-dark: #24500f;
-  --green-dark: #36960A;
-  --green-light: #C6DA52;
+  --green-dark: #36960a;
+  --green-light: #c6da52;
   --black: #000000;
-  --white: #FFFFFF;
-  --white-transparent: rgba(255,255,255,0.45);
+  --white: #ffffff;
+  --white-transparent: rgba(255, 255, 255, 0.45);
 
   --shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   --drop-shadow: drop-shadow(10px 15px 10px rgba(19, 24, 18, 0.55));
@@ -30,7 +29,7 @@
 html,
 body {
   height: 100%;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 body {
   background-color: var(--green-light);
@@ -47,7 +46,7 @@ body {
   line-height: 1;
 }
 .header h1 {
-  font-family: 'Kaushan Script', cursive;
+  font-family: "Kaushan Script", cursive;
   font-size: var(--spacing-xl);
 }
 /*****
@@ -72,7 +71,7 @@ body {
   color: var(--black);
   background-color: var(--green-dark);
   padding: var(--spacing-xs) var(--spacing-sm);
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   font-size: var(--spacing-md);
   display: flex;
   align-items: center;
@@ -90,7 +89,7 @@ body {
   background-image: url("./img/icons/expand-more-icon.svg");
   background-size: cover;
   background-position: center;
-  transition: transform .4s ease-in-out;
+  transition: transform 0.4s ease-in-out;
 }
 .accordion-button.show::after {
   transform: rotate(180deg);
@@ -98,19 +97,22 @@ body {
 /*panel*/
 .accordion-panel {
   background-color: var(--white-transparent);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  padding: 0 var(--spacing-md);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 250px);
+  column-gap: var(--spacing-md);
+  justify-content: center;
+  align-items: start;
   /*effect*/
   max-height: 0;
   overflow: hidden;
-  transition: all .4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 /********
 *PRODUCT*
 ********/
 .product {
-  padding: var(--spacing-sm);
+  margin: 20px 0;
   position: relative;
 }
 .img-product {
@@ -121,25 +123,47 @@ body {
   z-index: 1;
   filter: var(--drop-shadow);
 }
+.img-product-2 {
+  position: relative;
+  display: block;
+  max-width: 250px;
+  height: auto;
+  z-index: 1;
+}
 .price-product {
   border: 1px solid var(--green-full-dark);
-  border-radius: var(--spacing-md);
   position: absolute;
   z-index: 2;
-  bottom: var(--spacing-md);
-  background-color: var(--green-dark);
+  bottom: 0;
+  background-color: black;
   color: var(--white);
   padding: var(--spacing-xs);
   display: flex;
   gap: var(--spacing-xs);
 }
-.info-product {
-  border: 3px solid var(--green-full-dark);
-  border-radius: 50%;
+.no-product-badge {
+  border: 1px solid black;
   position: absolute;
   z-index: 2;
-  top: var(--spacing-md);
-  right: var(--spacing-md);
+  bottom: var(--spacing-md);
+  background-color: rgb(221, 0, 0);
+  color: black;
+  padding: var(--spacing-xs);
+  display: flex;
+  gap: var(--spacing-xs);
+}
+.info-product {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: absolute;
+  z-index: 2;
+  top: 5px;
+  right: 5px;
+}
+.info-product > * {
+  border: 3px solid var(--green-full-dark);
+  border-radius: 50%;
   background-color: black;
   color: var(--white);
   padding: var(--spacing-xs);
